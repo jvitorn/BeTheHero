@@ -1,5 +1,5 @@
 const express = require('express');
-
+const routes = require('./routes');
 const app = express();
 
 app.use(express.json());
@@ -17,12 +17,6 @@ app.use(express.json());
  *  ROUTE PARAMS:Parametros utiliados para identificar recursos
  *  REQUEST BODY:Corpo da requisição ,utilizado para criar ou alterar recursos
 */
-app.post('/users',(req,res)=>{
-    const params = req.body;
-    console.log(params);
-    return res.json({
-        evento:'Semana OminiStack 11',
-        aluno : 'Joao Vitor'
-    });
-});
+
+app.use(routes);
 app.listen(3333);
