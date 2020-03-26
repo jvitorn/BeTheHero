@@ -1,5 +1,6 @@
 const express = require('express');
 const routes = require('./routes');
+const cors = require('cors');
 const app = express();
 
 app.use(express.json());
@@ -17,6 +18,6 @@ app.use(express.json());
  *  ROUTE PARAMS:Parametros utiliados para identificar recursos
  *  REQUEST BODY:Corpo da requisição ,utilizado para criar ou alterar recursos
 */
-
+app.use(cors());
 app.use(routes);
 app.listen(3333);
