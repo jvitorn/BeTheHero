@@ -54,6 +54,7 @@ export default StyleSheet.create({
         color:'#737380',
     } , 
     space:{
+        marginTop:10,
         marginBottom:10,
     },
     detailsButton: {
