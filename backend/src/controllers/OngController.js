@@ -1,5 +1,5 @@
-//criptografia
-const crypto = require('crypto');
+//geração de id 
+const generateUniqueId = require('../utils/generateUniqueId');
 //conexao com o banco de dados 
 const connection = require('../database/connection');
 
@@ -18,7 +18,7 @@ module.exports = {
 
         const { name,email,whatsapp,city,uf } = req.body;
         //criando ids aleatorios atraves do crýpto 
-        const id = crypto.randomBytes(4).toString('HEX');
+        const id = generateUniqueId();
 
         await connection('ongs').insert({
             id,
